@@ -12,4 +12,10 @@ public interface DepartmentService {
     Department updateDepartment(Department department,Long departmentId);
 
     void deleteDepartmentById(Long departmentId);
+
+    Long getDepartmentByCode(String departmentCode);
+
+    String getDepartmentCodeById(Long departmentId);
+
+    Department getDepartmentDetails(Long departmentId);
 }
