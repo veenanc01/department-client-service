@@ -51,12 +51,27 @@ public class DepartmentServiceImpl implements DepartmentService {
             depDB.setDepartmentCode(
                     department.getDepartmentCode());
         }
-
-        return departmentRepository.save(depDB);
+        departmentRepository.save(depDB);
+        return depDB;
     }
 
     @Override
     public void deleteDepartmentById(Long departmentId) {
         departmentRepository.deleteById(departmentId);
+    }
+
+    @Override
+    public Long getDepartmentByCode(String departmentCode) {
+       return departmentRepository.getDepartmentByCode(departmentCode);
+    }
+
+    @Override
+    public String getDepartmentCodeById(Long departmentId) {
+        return departmentRepository.getDepartmentCodeById(departmentId);
+    }
+
+    @Override
+    public Department getDepartmentDetails(Long departmentId) {
+        return departmentRepository.findById(departmentId).get();
     }
 }
